@@ -16,3 +16,16 @@ Getting Started with Type Script Proejct:
     - to download package.json
 4. install typescipt 
     - npm i --save-dev typescript
+5. once install run command:
+    - npx tsc --init
+    - to create the boiler plate config file that translates typescript to JS
+    - NOTE *file may say there is an error until you create ts and js files in your repo
+
+6. create a src folder to write your ts files in
+7. create a dest folder to store the destination files
+8. add "start" script to package.json file 
+    - "start": "tsc --watch"
+    - so that as long as this is running the file will get complied from ts to js automatically
+9. you can also uncomment the 'outDir' method on tscconfig.json file to send all the converted ts files to that folder you specify.
+    -     "outDir": "./dest", /* Specify an output folder for all emitted files. */
+
