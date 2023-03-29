@@ -29,3 +29,4 @@ Getting Started with Type Script Proejct:
 9. you can also uncomment the 'outDir' method on tscconfig.json file to send all the converted ts files to that folder you specify.
     -     "outDir": "./dest", /* Specify an output folder for all emitted files. */
 
+10. However, if you want to install JS packages you can take a different route using a TS bundler (snowpack)
