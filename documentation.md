@@ -30,3 +30,11 @@ Getting Started with Type Script Proejct:
     -     "outDir": "./dest", /* Specify an output folder for all emitted files. */
 
 10. However, if you want to install JS packages you can take a different route using a TS bundler (snowpack)
+
+
+Getting Sarted with TypeScirpt using Snowpack
+
+1. In a blank file run command:
+    - npx create-snowpack-app . --template @snowpack/app-template-blank-typescript --force
+    - it will ask you to install
+    - then it will ask you to --force
