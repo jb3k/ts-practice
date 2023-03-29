@@ -26,3 +26,14 @@ Getting started with TS
 4. This is how you define a type is TS
     - it needs to match what you created before
     - it is good practice to just create the types at the top with a aliased name, then refer to that name in our function
+
+5. For function you can explicitly say what you want to return at the beginning of the function and ts will correct you if you return a different data type
+    Ex:
+    - function addListItem(task: Task): boolean {
+        do something
+    }
+
+6. This is how you set a type as an arr. The varibale created is going to be an array of Task
+
+
+7. had to create a variable of the task JSON because the JSON.parse() method could only take in non-null values... in the case that the task is null, it would cause an error, so in order to work around... save to varible make condition to retrun if null

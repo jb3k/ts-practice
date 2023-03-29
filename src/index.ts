@@ -1,10 +1,5 @@
 import { v4 as uuidV4 } from "uuid"
 
-//1 & 2
-const list = document.querySelector<HTMLUListElement>('#list')
-const form = document.querySelector<HTMLFormElement>('#new-task-form')
-const input = document.querySelector<HTMLInputElement>('#new-task-title')
-
 //4
 type Task = {
   id: string,
@@ -14,25 +9,66 @@ type Task = {
 }
 
 
+
+
+//1 & 2
+const list = document.querySelector<HTMLUListElement>('#list')
+const form = document.querySelector<HTMLFormElement>('#new-task-form')
+const input = document.querySelector<HTMLInputElement>('#new-task-title')
+//6
+const tasks: Task[] = loadTasks()
+
+tasks.forEach(addListItem)
+
 form?.addEventListener('submit', e => {
   e.preventDefault()
 
   // 3
   if (input?.value == "" || input?.value == null) return
 
-  const task = {
+  const newTask: Task = {
     id: uuidV4(),
     title: input.value,
     completed: false,
     createdAt: new Date()
   }
+  tasks.push(newTask)
 
-
-  addListItem(task)
+  addListItem(newTask)
+  input.value = ''
 
 })
 
-// 4
+// 4 & 5
 function addListItem(task: Task) {
+  const item = document.createElement('li')
+  const label = document.createElement('label')
+  const checkbox = document.createElement('input')
 
+  checkbox.addEventListener('change', () => {
+    task.completed = checkbox.checked
+    saveTasks()
+  })
+
+  checkbox.type = "checkbox"
+  checkbox.checked = task.completed
+
+  label.append(checkbox, task.title)
+  item.append(label)
+  list?.append(item)
+
+}
+
+
+function saveTasks() {
+  localStorage.setItem('TASKS', JSON.stringify(tasks))
+
+}
+
+function loadTasks() {
+  //7
+  const taskJSON = localStorage.getItem('TASKS')
+  if (taskJSON == null) return
+
+  return JSON.parse(taskJSON)
 }
