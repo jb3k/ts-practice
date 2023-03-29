@@ -38,4 +38,5 @@ Getting Sarted with TypeScirpt using Snowpack
     - npx create-snowpack-app . --template @snowpack/app-template-blank-typescript --force
     - it will ask you to install
     - use the --force only if you have a blank doc so it doesnt delete everything else
-2. Now if you want to download extra packing in node modules, the browser will be able to read the new packages. 
+
+* Now if you want to download extra packing in node modules, the browser will be able to read the new packages. 
