@@ -40,3 +40,6 @@ Getting Sarted with TypeScirpt using Snowpack
     - use the --force only if you have a blank doc so it doesnt delete everything else
 
 * Now if you want to download extra packing in node modules, the browser will be able to read the new packages. 
+
+2. once you start, you can delete everything in the index.ts file to get started
+* note you may need to comment out the "isolatedModules": true key/value to stop the errors in the beginning so that you dont need to use the imports and exports right away.
